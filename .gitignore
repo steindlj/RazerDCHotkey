@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Files from https://github.com/razerofficial/CSharp_SampleApp
+CChromaEditorLibrary.dll
+CChromaEditorLibrary64.dll
+ChromaAnimationAPI.cs
+RazerErrors.cs
+
 # User-specific files
 *.rsuser
 *.suo
