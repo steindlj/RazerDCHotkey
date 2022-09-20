@@ -1,7 +1,9 @@
 # RazerDCHotkey
+Minimal web API that gets my current mute status in Discord from my [Discord bot](https://github.com/steindlj/okidoki). In order to color the mute hotkey accordingly, the [Razer Chroma SDK](https://github.com/razerofficial/CSharp_SampleApp) was used. (not muted -> 🟩 | muted -> 🟥)
+>Only works if the bot is on the same server as me.
 
 ## License
-okidoki – Discord bot for servers dedicated to gaming, with some commands to play around with.<br />
+RazerDCHotkey – Minimal web API that gets my current mute status in Discord and then colors my mute hotkey accordingly.<br />
 Copyright © 2022 steindlj
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
