@@ -1,38 +1,27 @@
 using RazerChroma;
 
-namespace Program
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+app.UseHttpsRedirection();
+var muted = false;
+Chroma.InitChroma();
+
+app.MapGet("/mutestatus", () =>
 {
-    class BotAPI
+    return muted;
+});
+
+app.MapPost("/mutestatus/{mute}", (bool mute) =>
+{
+    if (mute != muted)
     {
-        static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
-
-            Chroma instance = new();
-            instance.InitChroma();
-            var muted = false;
-
-            app.MapGet("/mutestatus", () =>
-            {
-                return muted;
-            });
-
-            app.MapPost("/mutestatus/{mute}", (bool mute) =>
-            {
-                if (mute != muted)
-                {
-                    instance.setEffect(ChromaSDK.Keyboard.RZKEY.RZKEY_INSERT, mute);
-                    muted = mute;
-                }
-
-                return Results.NoContent();
-            });
-
-            app.Run();
-        }
+        Chroma.setEffect(ChromaSDK.Keyboard.RZKEY.RZKEY_INSERT, mute);
+        muted = mute;
     }
-        
-}
+
+    return Results.NoContent();
+});
+
+app.Run();
 
 

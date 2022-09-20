@@ -2,9 +2,9 @@
 
 namespace RazerChroma
 {
-    public class Chroma
+    public static class Chroma
     {
-        public void InitChroma()
+        public static void InitChroma()
         {
             ChromaSDK.APPINFOTYPE appInfo = new()
             {
@@ -29,7 +29,7 @@ namespace RazerChroma
             }
         }
 
-        public void setEffect(Keyboard.RZKEY key, bool muted)
+        public static void setEffect(Keyboard.RZKEY key, bool muted)
         {
             var layerKeyboard = "Animations/Rainbow_Keyboard.chroma";
             var layerMouse = "Animations/Blank_Mouse.chroma";
@@ -41,7 +41,7 @@ namespace RazerChroma
             ChromaAnimationAPI.PlayAnimationName(layerMouse, true);
         }
 
-        private int setHotkeyColor(bool muted)
+        private static int setHotkeyColor(bool muted)
         {
             var color = 0;
             if (muted == true)
