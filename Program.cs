@@ -11,7 +11,7 @@ app.MapGet("/mutestatus", () =>
     return muted;
 });
 
-app.MapPost("/mutestatus/{mute}", (bool mute) =>
+app.MapPut("/mutestatus/{mute}", (bool mute) =>
 {
     if (mute != muted)
     {
